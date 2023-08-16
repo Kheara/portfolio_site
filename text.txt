@@ -1,0 +1,12 @@
+1. 레파지토리 생성
+2. git init 명령어 입력 터미널(터미널 루트 폴더에서)
+3. 레파지토리에 파일 업로드 확인
+4. 세팅 -> pages  ( 파일이름에 한글 X)
+5. git에 branch가 있음 select branch 선택후 main  / root save눌러준다.
+6. 사이트 링크나옴
+
+새로 업로드 했을 경우 아래 세개만
+
+add
+commit
+push

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #animationContainer {
+    width: 1302px;
+    height: 1080px;
+    overflow: hidden;
+  }
+  .sprite {
+    position: absolute;
+    width: 1302px;
+    height: 1080px;
+    background-image: url('./img/main/head/head_ani.jpg');
+    background-size: auto;
+    background-position: 0px;
+  }
+</style>
+</head>
+<body>
+
+<div id="animationContainer">
+  <div class="sprite"></div>
+</div>
+
+<script>
+   const spriteElement = document.querySelector('.sprite');
+   const animationContainer = document.getElementById('animationContainer');
+   
+   let animationStarted = false; 
+   
+   animationContainer.addEventListener('mouseenter', () => {
+     if (!animationStarted) {
+       animationStarted = true;
+       animateSprite();
+     }
+   });
+   
+   function animateSprite() {
+     let frame = 0;
+     const frameWidth = 1302;
+     const totalFrames = 18;
+     const animationSpeed = 30;
+     const stopPosition = 20832; // Stop at this position in pixels
+   
+     function nextFrame() {
+       spriteElement.style.backgroundPosition = `-${frame * frameWidth}px 0px`;
+   
+       if (frame * frameWidth < stopPosition && frame < totalFrames - 1) {
+         frame++;
+         setTimeout(nextFrame, animationSpeed);
+       }
+     }
+   
+     nextFrame();
+   }
+   
+</script>
+
+</body>
+</html>
